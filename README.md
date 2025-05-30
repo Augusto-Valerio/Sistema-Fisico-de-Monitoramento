@@ -2,9 +2,9 @@
 
 ## 👥 Integrantes do Grupo
 
-- *Augusto Valerio*
-- *Jonas Esteves*
-- *Josué Faria*
+- [Augusto Valerio](https://github.com/Augusto-Valerio).
+- [Jonas Esteves](https://github.com/Jonas-Franca).
+- [Josué Faria](https://github.com/Josufaria).
 
 ---
 
@@ -22,10 +22,10 @@ Este projeto propõe um sistema físico de monitoramento de enchentes utilizando
 
 ## 🛠 Componentes Utilizados
 
-- *Arduino UNO*
-- *Potenciômetro* (simulando o sensor de nível)
-- *LED vermelho* (alerta)
-- *Buzzer* (alarme sonoro)
+- Arduino UNO
+- Potenciômetro (simulando o sensor de nível)
+- LED vermelho (alerta)
+- Buzzer (alarme sonoro)
 - (Cabos, resistores, protoboard...)
 
 ---
@@ -54,13 +54,12 @@ Este projeto propõe um sistema físico de monitoramento de enchentes utilizando
 
 ![Circuito montado no Tinkercad](images/circuito.png)
 
-
 ---
 
 ### 🧭 Instruções para simular
 
 1. Acesse o link da simulação.
-2. Clique em *"Iniciar Simulação"*.
+2. Clique em "Iniciar Simulação".
 3. Gire o potenciômetro para simular o aumento do nível da água.
 4. Observe o LED, o buzzer e as mensagens no Monitor Serial.
 
