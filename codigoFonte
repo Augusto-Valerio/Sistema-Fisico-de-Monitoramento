@@ -1,0 +1,54 @@
+//---Integrantes---
+//Augusto Valerio
+//Jonas Esteves
+//Josué Faria
+//-----------------
+
+
+//Pinos
+int sensorNivel = A0; // Potenciômetro Conectado no pino A0
+int ledAlerta = 8; // Led Conectado no pino 8
+int buzzer = 9; // Buzzer Conectado no pino 9
+
+// Variável para Limite do nível de agua utilizandoi potenciômetro
+// Quando o valor ultrapassa esse limite, o sistema dispara o alerta
+int limite = 900; 
+
+//Controle de estado
+int estado = 0;
+
+
+//configurações dos pinos
+void setup() { 
+  pinMode(ledAlerta, OUTPUT);
+  pinMode(buzzer, OUTPUT);
+  Serial.begin(9600); 
+}
+
+
+void loop() {
+  
+  // Variável para ler o valor atual do potênciometro(Para saber o nivrl de água)
+  int valorAtual = analogRead(sensorNivel);
+  
+
+  //Verifica se o valor passar do limite E ainda não estiver em alerta
+  if (valorAtual >= limite && estado == 0) {
+    digitalWrite(ledAlerta, HIGH); //Acende o Led de alerta
+    tone(buzzer, 1000, 300);// Emite o som de alerta
+    Serial.println("ALERTA: Nivel de agua elevado!");
+    estado = 1;
+    delay(300);//Mantém o som de alerta por 0.3 segundos
+    
+  }
+
+  // Se o valor voltar ao normal e ainda estiver em alerta
+  if (valorAtual < limite && estado == 1) {
+    digitalWrite(ledAlerta, LOW);
+    Serial.println(""); //Espaço entre mensagens no monitor Serial
+    Serial.println("Estado normal");
+    Serial.println("");
+    estado = 0; //Volta para o estado normal
+    noTone(buzzer);// Desliga o buzzer
+  }
+}
